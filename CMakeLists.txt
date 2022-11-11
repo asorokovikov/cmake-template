@@ -4,7 +4,7 @@ if (NOT DEFINED ENV{BUILD_NUMBER})
     set(ENV{BUILD_NUMBER} 1)
 endif()
 
-project(CMakeTemplate VERSION 0.0.$ENV{BUILD_NUMBER})
+project(cmake-project-template VERSION 0.0.$ENV{BUILD_NUMBER})
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED  ON)
