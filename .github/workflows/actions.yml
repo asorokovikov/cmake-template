@@ -1,0 +1,25 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: install packages
+      run: sudo apt install -y cmake libspdlog-dev libboost-test-dev libgtest-dev
+    - name: cmake
+      run: cmake .
+    - name: cmake build
+      run: cmake --build .
+    - name: cmake test
+      run: cmake --build . --target test
+    - name: cmake package
+      run: cmake --build . --target package
