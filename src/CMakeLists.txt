@@ -3,7 +3,7 @@
 configure_file(${PROJECT_SOURCE_DIR}/src/lib/version.h.in ${PROJECT_SOURCE_DIR}/src/lib/version.h)
 
 find_package(Threads REQUIRED)
-find_package(Boost COMPONENTS unit_test_framework REQUIRED)
+#find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 find_package(spdlog REQUIRED)
 
 if (Boost_FOUND)
