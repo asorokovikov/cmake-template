@@ -1,12 +1,24 @@
 cmake_minimum_required(VERSION 3.23)
 
-project(CMakeTemplate VERSION 0.0.1$ENV{TRAVIS_BUILD_NUMBER})
+if (DEFINED ENV{TRAVIS_BUILD_NUMBER})
+    set(BUILD_NUMBER $ENV{TRAVIS_BUILD_NUMBER})
+else()
+    set(BUILD_NUMBER 1)
+endif()
+
+project(CMakeTemplate VERSION 0.0.${BUILD_NUMBER})
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED  ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-enable_testing()
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+message(STATUS "Build: ${BUILD_NUMBER}")
 
 add_subdirectory(src)
 add_subdirectory(tests)
+
+enable_testing()
