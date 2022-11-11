@@ -1,1 +1,1 @@
-# boost-test
+# cmake-template
