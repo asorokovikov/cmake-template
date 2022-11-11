@@ -15,16 +15,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Build $BUILD_NUMBER
-        run: echo "Build $BUILD_NUMBER"
       - uses: actions/checkout@v3
-      - name: install packages
+      - name: Install packages
         run: sudo apt install -y cmake libspdlog-dev libboost-test-dev libgtest-dev
-      - name: cmake
+      - name: Prepare
         run: cmake .
-      - name: cmake build
+      - name: Build
         run: cmake --build .
-      - name: cmake test
+      - name: Test
         run: cmake --build . --target test
-      - name: cmake package
+      - name: Pack
         run: cmake --build . --target package
