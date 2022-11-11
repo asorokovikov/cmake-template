@@ -25,4 +25,4 @@ target_link_libraries(lib_tests
         lib
 )
 
-add_test(lib_gtests lib_tests)
+add_test(lib_tests ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/lib_tests)

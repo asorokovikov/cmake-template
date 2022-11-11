@@ -18,7 +18,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 message(STATUS "Build: ${BUILD_NUMBER}")
 
+enable_testing()
+
 add_subdirectory(src)
 add_subdirectory(tests)
-
-enable_testing()
