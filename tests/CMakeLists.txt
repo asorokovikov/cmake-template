@@ -12,11 +12,6 @@
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 find_package(GTest REQUIRED)
 
-if (GTest_FOUND)
-    message(STATUS "GTest_SOURCE_DIR: ${gtest_SOURCE_DIR}")
-endif()
-
-
 add_executable(lib_tests lib_tests.cpp)
 
 target_link_libraries(lib_tests

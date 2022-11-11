@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.23)
 
 if (NOT DEFINED ENV{BUILD_NUMBER})
-    set(BUILD_NUMBER 1)
+    set(ENV{BUILD_NUMBER} 1)
 endif()
 
 project(CMakeTemplate VERSION 0.0.$ENV{BUILD_NUMBER})
