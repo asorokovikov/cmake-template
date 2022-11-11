@@ -15,12 +15,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print $BUILD_NUMBER
-        run: echo "Build number is $BUILD_NUMBER"
-      - name: Print GITHUB_RUN_NUMBER
-        run: echo "GITHUB_RUN_NUMBER is $GITHUB_RUN_NUMBER"
-      - name: Print run_number
-        run: echo "GITHUB_RUN_NUMBER is ${{github.run_number}}"
+      - name: Build $BUILD_NUMBER
+        run: echo "Build $BUILD_NUMBER"
       - uses: actions/checkout@v3
       - name: install packages
         run: sudo apt install -y cmake libspdlog-dev libboost-test-dev libgtest-dev
