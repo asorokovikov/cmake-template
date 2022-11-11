@@ -1,5 +1,5 @@
 #include "lib.h"
-#include "../version.h"
+#include "version.h"
 
 namespace lib {
 

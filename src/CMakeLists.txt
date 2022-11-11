@@ -1,12 +1,10 @@
-project(cmake VERSION 0.0.22$ENV{TRAVIS_BUILD_NUMBER})
 
-include_directories(${Boost_INCLUDE_DIR})
+
+configure_file(${PROJECT_SOURCE_DIR}/src/lib/version.h.in ${PROJECT_SOURCE_DIR}/src/lib/version.h)
 
 find_package(Threads REQUIRED)
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 find_package(spdlog REQUIRED)
-
-configure_file(version.h.in version.h)
 
 if (Boost_FOUND)
     message(STATUS "Boost_INCLUDE_DIR: ${Boost_INCLUDE_DIR}")
