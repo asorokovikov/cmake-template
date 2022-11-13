@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install packages
-        run: sudo apt install -y cmake libspdlog-dev libboost-test-dev libgtest-dev
+        run: sudo apt install -y cmake libspdlog-dev libboost-test-dev libboost-system-dev libgtest-dev
       - name: Prepare
         run: cmake .
       - name: Build
